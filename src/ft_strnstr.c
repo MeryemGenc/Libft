@@ -1,24 +1,39 @@
 #include "libft.h"
 
-// char *strnstr(const char *big, const char *little, size_t len)
-// {
-//     size_t a;
+char *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    size_t a;
+    size_t b;
 
-//     a = 0;
-//     --n; /* bunu yapmayınca 1 fazla indexe bakiyor?*/
-//     while ((unsigned char)s1[a] == (unsigned char)s2[a] && s1[a] && s2[a] && a < n)
-//     {
-//         a++;
-//     }
-//     return ((unsigned char)s1[a] - (unsigned char)s2[a]);
-// }
+    if (!little[0])
+        return ((char *)big);
+    a = 0;
+    while (big[a])
+    {
+        b = 0;
+        while (big[a + b] == little[b] && a + b < len)
+        {
+            if (!big[a + b] || !little[b])  /* || ==> &&  */
+            {
+                return ((char *)big + a);
+            }
+            b++;
+        }
+        if (!little[b])
+        {
+            return ((char *)big + a);
+        }
+        a++;
+    }
+    return (0);
+}
 
-
+/*
 int main()
 {
-    char a[] = "qwertyu";
+    char a[] = "hgfdqwertyu";
     char b[] = "qwer";
 
-    printf("%d", ft_strncmp(b, a, 5));
+    printf("%s", ft_strnstr(a, b, 15));
     return 0;
-}
+} */
