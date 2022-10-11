@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void *ft_memmove(void* dst, const void* src, size_t n)
-{
+{ /* diger projelerle karsilasirdim => ayni sonuc */
     size_t i;
     
     char *tmp = (char *)malloc(sizeof(char) * n);
@@ -24,12 +24,17 @@ void *ft_memmove(void* dst, const void* src, size_t n)
     return dst;
 }
 
+/*
 int main()
 {
     char a[] = "Aticleworld";
     char b[16] = {0};
     
-    ft_memmove(b, a, 7);
+    ft_memmove(b, a, 5);
+    printf("%s\n",b);
+    ft_memmove(a, a+3, 5);
+    printf("%s\n",b);
+    ft_memmove(a+3, a, 5);
     printf("%s",b);
     return 0;
-} 
+} */
