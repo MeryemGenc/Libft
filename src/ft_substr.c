@@ -4,28 +4,28 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *temp;
-    int i;
+    size_t i;
 
     i = 0;
-    temp = (char *)malloc(sizeof(char) * len + 1);
-    if (temp == NULL)
-        return NULL;
-    while (len < (start + len))
+    temp = (char *)malloc(sizeof(char) * (len + 1));
+    if (!temp)
+        return (NULL);
+    --start;
+    while (i < len && s[start]) // if strlen(s) < len : zaten s[start] == NULL'se döngü durur
     {
-        *(temp + i) = s[start++];
+        temp[i] = s[start++];
         i++;
     }
-    *(temp + i) = '\0';
-    return (temp);
+    temp[i] = '\0'; // if start > strlen(s) : temp = NULL olur zaten.
+    return temp;
 }
 
-
-
+/*
 int main()
 {
-    char a[] = "hello people";
-    char *temp = ft_substr(a, 2, 5);
+    char a[] = "hello_people";
+    char *temp = ft_substr(a, 15, 25);
     printf("%s\n", temp);
     free(temp);
     return 0;
-}
+}*/
