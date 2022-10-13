@@ -14,6 +14,15 @@ char *ft_strrchr(const char *s, int c)
     return (0);
 }
 
+// char *ft_strchr(const char *s, int c)
+// {
+//     while (*s != '\0' && c != *s)
+//         s++;
+//     if (c == *s)
+//         return ((char *)s);
+//     return (0);
+// }
+
 /*
 int main()
 {
