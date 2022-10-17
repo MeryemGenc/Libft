@@ -1,13 +1,6 @@
 #include "libft.h"
 #include "stdlib.h"
 
-
-/*
-    -> kaç parca var => 1 fonksiyon
-    -> 
-
-*/
-
 char **ft_split(char const *s, char c)
 {
     int i;

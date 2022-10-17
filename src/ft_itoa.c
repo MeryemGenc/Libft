@@ -77,6 +77,7 @@ char *ft_itoa(int n)
     return str;
 }
 
+/*
 int main()
 {
     int a = -4123453;
@@ -86,4 +87,4 @@ int main()
         // printf("%d", reverse_num(a, 3));
         printf("%s", b);
     return 0;
-}
+} */
