@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 15:31:11 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/20 15:31:25 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/20 14:29:58 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/20 14:59:25 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	write(fd, &c, 1);
+	int	a;
+
+	a = 0;
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		lst = lst->next;
+		a++;
+	}
+	return (a);
 }

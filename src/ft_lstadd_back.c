@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 15:31:11 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/20 15:31:25 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/20 14:56:05 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/20 14:56:54 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	write(fd, &c, 1);
+	t_list	*tmp;
+
+	tmp = *lst;
+	if (!*lst || !new)
+		return ;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
