@@ -1,6 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 int arrLen(char const *arr, char c)
 {
