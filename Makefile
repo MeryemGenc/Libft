@@ -3,6 +3,8 @@ NAME	= libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
+RM		= rm -f
+
 SRCS = \
 	ft_isascii.c ft_isprint.c ft_isalpha.c \
 	ft_isdigit.c ft_isalnum.c ft_tolower.c \
@@ -15,9 +17,28 @@ SRCS = \
 	ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_itoa.c ft_substr.c ft_strjoin.c \
 	ft_strtrim.c ft_split.c ft_strmapi.c
+OBJS	= $(SRCS:.c=.o)
 	
 BONUS = \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 	ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_OBJS	= $(BONUS_S:.c=.o)
 
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
+
+clean:
+				$(RM) $(OBJS) $(BONUS_OBJS)
+
+fclean:			clean
+				$(RM) $(NAME)
+
+re:				fclean $(NAME)
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY:			all clean fclean re bonus
