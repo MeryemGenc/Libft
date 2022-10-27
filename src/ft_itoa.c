@@ -6,12 +6,11 @@
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:39:23 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/20 15:48:36 by mgencali         ###   ########.tr       */
+/*   Updated: 2022/10/27 13:30:59 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	count_step(int num)
 {

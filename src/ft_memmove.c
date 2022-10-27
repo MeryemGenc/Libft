@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/27 13:42:25 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/27 13:46:14 by mgencali         ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-void *ft_memmove(void* dst, const void* src, size_t n)
-{ /* diger projelerle karsilasirdim => ayni sonuc */
-    size_t i;
-    
-    char *tmp = (char *)malloc(sizeof(char) * n);
-    if(tmp == NULL)
-        return NULL;
-    i = 0;
-    while (i < n)
-    {
-        *(tmp + i) = *(const char*)(src + i);
-        i++; 
-    }
-    i = 0;
-    while (i < n)
-    {
-        *(char *)(dst + i) = *(tmp + i);
-        i++;
-    }
-    free(tmp); 
-    return dst;
-}
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+	size_t	i;
+	char	*tmp;
 
+	tmp = (char *)malloc(sizeof(char) * n);
+	if (tmp == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		*(tmp + i) = *(const char *)(src + i);
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		*(char *)(dst + i) = *(tmp + i);
+		i++;
+	}
+	free(tmp);
+	return (dst);
+}
 /*
 int main()
 {
