@@ -6,7 +6,7 @@
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:49:12 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:54:31 by mgencali         ###   ########.tr       */
+/*   Updated: 2022/10/27 15:41:02 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	transfer_arr(char **dst, char const *src, char c)
 		dst[i++] = ft_substr(src - j, 0, j);
 		src++;
 	}
-	dst[i] = '\0';
+	dst[i][j] = '\0';
 }
 
 char	**ft_split(char const *s, char c)
