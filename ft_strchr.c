@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:19:30 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 14:20:02 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 13:54:55 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 18:11:34 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	if ((char)c == 0)
+		return ((char *)(s + ft_strlen(s)));
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	return (0);
 }
-/*
-int main()
-{
-    printf("%c", ft_toupper('a'));
-    return 0;
-}*/

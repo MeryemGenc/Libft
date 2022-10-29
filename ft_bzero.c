@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:29:17 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:29:41 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 13:22:54 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 15:28:11 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	ft_memset(s, '\0', n);
 }
 /*
 int main()
 {
-    printf("%d", ft_isdigit(127));
+    char a[] = "qwertyu";
+    ft_bzero(a, 4);
+    printf("%s", a);
     return 0;
-} */
+}*/

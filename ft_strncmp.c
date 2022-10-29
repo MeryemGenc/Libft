@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:04:24 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 14:05:09 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 14:07:39 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 18:22:50 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	a;
-
-	a = 0;
-	while (a < dstsize && src[a] != '\0')
+	while ((*s1 && *s2) && (n > 0))
 	{
-		dst[a] = src[a];
-		a++;
+		if (*s1 != *s2)
+			break ;
+		s1++;
+		s2++;
+		n--;
 	}
-	dst[a] = '\0';
-	return (a);
+	if (n == 0)
+		return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-/*
-int main()
-{
-    char a[] = "hshshkjhasjh";
-    char b[7];
-
-    printf("%d", ft_strlcpy(b, a, 7));
-    return 0;
-} */

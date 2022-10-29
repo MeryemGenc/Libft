@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:18:43 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 14:19:14 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 13:29:17 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 16:17:01 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	return (c >= 32 && c <= 126);
 }
-/*
-int main()
-{
-    printf("%c", ft_tolower('A'));
-    return 0;
-}*/

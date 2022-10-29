@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:54:55 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:55:37 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 13:34:14 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 15:33:49 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)(s + i));
+		i++;
 	}
 	return (0);
 }
 /*
 int main()
 {
-    char a[] = "qwertyuoop";
-    printf("%s",ft_strchr(a,'o'));
-
+    char a[] = "Aticleworldaaaaao";
+    char b = 'o';
+    
+    
+    printf("%s",ft_memchr(a, b, 14));
     return 0;
-}*/
+} */

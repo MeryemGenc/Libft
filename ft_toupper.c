@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:22:54 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:23:17 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 14:19:30 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 16:19:28 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	ft_memset(s, '0', n);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
-/*
-int main()
-{
-    char a[] = "qwertyu";
-    ft_bzero(a, 4);
-    printf("%s", a);
-    return 0;
-}*/

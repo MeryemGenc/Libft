@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:36:10 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:38:00 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 14:17:17 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 18:46:35 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*temp;
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (i < n && s1 + i)
-	{
-		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
-			break ;
-		i++;
-	}
-	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+	temp = (char *)malloc(len + 1);
+	if (!s || !temp)
+		return (0);
+	i = start;
+	j = 0;
+	while (i < ft_strlen(s) && j < len)
+		temp[j++] = s[i++];
+	temp[j] = '\0';
+	return (temp);
 }
-/*
-int main()
-{
-    char a[] = "hellowarldaaaaao";
-    char b[] = "helloworldaaaaao";
-    
-    printf("%d",ft_memcmp(a, b, 33));
-    return 0;
-} */

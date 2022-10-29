@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 13:34:14 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/27 13:35:39 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/27 13:28:24 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 16:06:23 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_isdigit(int nb)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && s + i)
-	{
-		if (*(unsigned char *)(s + i) == c)
-			return ((void *)(s + i));
-		i++;
-	}
+	if (nb >= '0' && nb <= '9')
+		return (nb);
 	return (0);
 }
-/*
-int main()
-{
-    char a[] = "Aticleworldaaaaao";
-    char b = 'o';
-    
-    
-    printf("%s",ft_memchr(a, b, 14));
-    return 0;
-} */
