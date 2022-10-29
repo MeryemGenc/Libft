@@ -16,7 +16,8 @@ SRCS = \
 	ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_itoa.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c ft_strmapi.c
+	ft_strtrim.c ft_split.c ft_strmapi.c \
+	ft_strdup.c ft_calloc.c
 OBJS = $(SRCS:.c=.o)
 	
 BONUS = \
@@ -24,9 +25,10 @@ BONUS = \
 	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 	ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_OBJS = $(BONUS_S:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
 
 all:			$(NAME)
+	@echo "basariyla tamamlandi"
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)

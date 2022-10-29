@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:29:58 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/29 13:52:42 by mgencali         ###   ########.tr       */
+/*   Created: 2022/10/29 13:38:32 by mgencali          #+#    #+#             */
+/*   Updated: 2022/10/29 13:40:31 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-int	ft_lstsize(t_list *lst)
+char	*ft_strdup(const char *s1)
 {
-	int	a;
+	char	*str;
+	size_t	i;
 
-	a = 0;
-	if (!lst)
-		return (0);
-	while (lst)
+	if (!s1)
+		return (NULL);
+	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		lst = lst->next;
-		a++;
+		str[i] = s1[i];
+		i++;
 	}
-	return (a);
+	str[i] = 0;
+	return (str);
 }

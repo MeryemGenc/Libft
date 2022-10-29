@@ -6,7 +6,7 @@
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:57:22 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/20 14:57:51 by mgencali         ###   ########.tr       */
+/*   Updated: 2022/10/29 13:51:46 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return ;
+		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

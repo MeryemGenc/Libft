@@ -6,12 +6,11 @@
 /*   By: mgencali <42istanbul.com.tr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:42:53 by mgencali          #+#    #+#             */
-/*   Updated: 2022/10/20 14:50:19 by mgencali         ###   ########.tr       */
+/*   Updated: 2022/10/29 13:58:41 by mgencali         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -19,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*tmp;
 
 	if (!lst || !f)
-		return ;
+		return (NULL);
 	new = NULL;
 	while (lst)
 	{
@@ -32,4 +31,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&new, tmp);
 		lst = lst->next;
 	}
+	return (tmp);
 }
