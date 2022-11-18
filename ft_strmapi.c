@@ -11,26 +11,28 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*res;
-	unsigned int	a;
+	unsigned int	len;
+	unsigned int	pos;
+	char			*str;
 
-	a = 0;
 	if (!s)
-		return (NULL);
-	res = malloc((ft_strlen(s) + 1));
-	if (!res)
-		return (NULL);
-	while (res[a])
+		return (0);
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (0);
+	pos = 0;
+	while (pos < len)
 	{
-		res[a] = f(a, s[a]);
-		a++;
+		*(str + pos) = *(s + pos);
+		*(str + pos) = (*f)(pos, *(str + pos));
+		pos++;
 	}
-	res[a] = '\0';
-	return (res);
+	*(str + pos) = '\0';
+	return (str);
 }
 /*
 int main()

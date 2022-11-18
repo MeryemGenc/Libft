@@ -32,3 +32,12 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(num + '0', fd);
 	}
 }
+/*
+int	main(void)
+{
+    creat("test.txt", O_CREAT | S_IRWXU);
+	int	fd = open ("test.txt", O_WRONLY | O_APPEND);
+	ft_putnbr_fd(1,fd);
+    ft_putnbr_fd(2,fd);
+}
+*/

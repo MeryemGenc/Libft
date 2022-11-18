@@ -29,4 +29,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		*dst = '\0';
 	while (*src++)
 		a++;
-	return (a);}
+	return (a);
+}

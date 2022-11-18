@@ -18,3 +18,12 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
+/*
+int	main(void)
+{
+    creat("test.txt", O_CREAT | S_IRWXU);
+	int	fd = open ("test.txt", O_WRONLY);
+    char s[] = "selam";
+	ft_putstr_fd(s,fd);
+}
+*/

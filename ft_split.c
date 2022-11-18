@@ -12,65 +12,69 @@
 
 #include "libft.h"
 
-int	arr_len(char const *arr, char c)
+static int	arr_len(char const *arr, char c)
 {
-	int	len;
-	int	i;
+	size_t	index;
 
-	i = 0;
-	len = 0;
-	while (arr[i])
+	index = 0;
+	while (*arr)
 	{
-		if (arr[i] != c)
-			len++;
-		i++;
+		index++;
+		while (*arr && *arr == c)
+			arr++;
+		if (*arr == '\0')
+			index--;
+		while (*arr && *arr != c)
+			arr++;
 	}
-	return (len);
+	return (index);
 }
 
-void	transfer_arr(char **dst, char const *src, char c)
+static char	**transfer_arr(char **dst, char const *src, char c)
 {
-	int	i;
-	int	j;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
 	while (*src)
 	{
-		if (*src == c)
+		if (*src != c)
 		{
-			src++;
-			continue ;
+			len = 0;
+			while (*src && *src != c)
+			{
+				len++;
+				src++;
+			}
+			dst[i++] = ft_substr(src - len, 0, len);
 		}
-		j = 0;
-		while (*src && *src != c)
-		{
-			j++;
+		else
 			src++;
-		}
-		dst[i++] = ft_substr(src - j, 0, j);
-		src++;
 	}
-	dst[i][j] = '\0';
+	dst[i] = 0;
+	return (dst);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
+	char	**split_string;
+	size_t	len_words;
 
-	arr = malloc(sizeof(char *) * arr_len(s, c) + 1);
-	if (!arr)
+	if (!s)
 		return (NULL);
-	transfer_arr(arr, s, c);
-	return (arr);
+	len_words = arr_len(s, c);
+	split_string = malloc(sizeof(char *) * (len_words + 1));
+	if (!split_string)
+		return (NULL);
+	split_string = transfer_arr(split_string, s, c);
+	return (split_string);
 }
 /*
-int	main()
+int     main()
 {
     char a[] = "hello-people-how-are-you";
     char b = '-';
     char **c = ft_split(a, b);
-
     printf("%s\n%s\n%s\n%s\n%s", c[0], c[1], c[2], c[3], c[4]);
-
     return 0;
 } */
