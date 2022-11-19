@@ -31,3 +31,6 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
+/*
+Verilen diziyi bellekte yer ayirip, bu yere kopyalayarak dondurur.
+*/

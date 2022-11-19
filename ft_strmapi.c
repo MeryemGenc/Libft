@@ -15,23 +15,23 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	len;
-	unsigned int	pos;
+	unsigned int	i;
 	char			*str;
 
 	if (!s)
 		return (0);
 	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * len + 1);
+	str = (char *)malloc(len + 1);
 	if (str == NULL)
 		return (0);
-	pos = 0;
-	while (pos < len)
+	i = 0;
+	while (i < len)
 	{
-		*(str + pos) = *(s + pos);
-		*(str + pos) = (*f)(pos, *(str + pos));
-		pos++;
+		*(str + i) = *(s + i);
+		*(str + i) = (*f)(i, *(str + i));
+		i++;
 	}
-	*(str + pos) = '\0';
+	*(str + i) = '\0';
 	return (str);
 }
 /*

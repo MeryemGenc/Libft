@@ -27,3 +27,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+/*
+ strmapi farkı => fonksiyona her karakterin adresi yollanir.
+ strmap te => degisen diziden yeni dizi yaratilir
+ striteri => degisiklikler mevcut dizi uzerinde uygulanir.
+*/

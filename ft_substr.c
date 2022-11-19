@@ -34,3 +34,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
+/*
+ Dizinin boyutu start indexinden kucukse => bos dizi doner
+ Dizide yeterli alan yoksa => kopyalanacak uzunlugu, 
+ 	dizideki bos alan kadar yapar
+ Sikinti yoksa => olusturulan diziyi doner
+ */
